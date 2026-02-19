@@ -1,7 +1,7 @@
-const {Pool} = require('pg');
+require ('doten').config();
 
 
-const pool= new Pool({
+const config= {
   env: process.env.NODE_ENV || 'dev',
   port: process.env.PORT || 3000,
   dbUser : process.env.DB_USER ,
@@ -9,9 +9,9 @@ const pool= new Pool({
   dbHost : process.env.DB_HOST ,
   dbPort : process.env.DB_PORT ,
   dbName : process.env.DB_NAME ,
-});
+};
 
 
 
- module.exports = pool ;
+ module.exports = {config } ;
 
