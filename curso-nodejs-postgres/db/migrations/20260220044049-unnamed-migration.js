@@ -2,7 +2,7 @@
 
 /** @type {import('sequelize-cli').Migration} */
 
-const{UserSchema, USER_TABLE}= require ('./../dbmodels/users.model');
+const{UserSchema, USER_TABLE}= require ('../models/users.model');
 
 //migracion para el campo rol 
 
