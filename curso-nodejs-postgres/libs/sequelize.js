@@ -13,8 +13,7 @@ const sequelize = new Sequelize(URI, {
 });
 setupModels(sequelize);
 
-sequelize.sync();//
-
+ 
 // Verificar que el modelo User esté registrado
 console.log('Modelos registrados:', Object.keys(sequelize.models));
 
