@@ -1,4 +1,4 @@
- const { Model, DataTypes, Sequelize } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 
 const USER_TABLE = 'users';
 
@@ -17,13 +17,11 @@ const UserSchema = {
   password: {
     allowNull: false,
     type: DataTypes.STRING
-    
   },
-  role:{
+  role: {
     allowNull: false,
-    type: DataTypes.STRING, 
-    defaultValue:'customer'
-
+    type: DataTypes.STRING,
+    defaultValue: 'customer'
   },
   createdAt: {
     allowNull: false,
@@ -34,8 +32,11 @@ const UserSchema = {
 }
 
 class User extends Model {
-  static associate() {
-    // associate
+  static associate(models) {
+    this.hasOne(models.Customer, {
+      as: 'customer',
+      foreignKey: 'userId'
+    });
   }
 
   static config(sequelize) {
